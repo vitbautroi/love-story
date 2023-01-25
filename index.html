@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Our Love Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="comments">##</span><br/>
+			<span class="comments"># I am a programmer,</span><br/>
+			<span class="comments"># so I write code to celebrate Valentine's Day in coder's way.</span><br/>
+			<span class="comments">##</span><br/>
+			i = Boy(<span class="string">"Bviet đang ngủ"</span>);<br/>
+			u = Girl(<span class="string">"Chipoo.chipi"</span>);<br/>
+			<span class="comments"># Năm nhất đại học, Tớ match cậu trên Tinder. </span><br/>
+			i.match(u)<br/>
+			<span class="comments"># Sau đó, Tớ đã không biết cậu thích tớ rồi bỏ lỡ cậu. </span><br/>
+			i.miss(u)<br/>
+			<span class="comments"># Tháng 6 năm 2021, Tớ có nói chuyện lại với cậu.</span><br/>
+			i.comeback(u)<br/>
+			<span class="comments"># Thời gian đó, thực sự tớ muốn tán lại cậu.</span><br/>
+			happy(i, u)<br/>
+			<span class="comments"># Tớ cũng không nghĩ là cậu đã có người yêu vào thời điểm đó.</span><br/>
+			think(i, u)<br/>
+			<span class="comments"># Tớ cũng không biết cậu đã bị trầm cảm, bị tổn thương và khóc nhiều đến nhường nào.</span><br/>
+			sorry(u, i)<br/>
+			<span class="comments"># Một thời gian sau đó đến cuối năm 2022, chúng mình có liên lạc lại với nhau.</span><br/>
+			accepted(u, i)<br/>
+			<span class="comments"># Sau đó 1 tháng tớ bắt đầu có tình cảm với cậu nhưng nó chưa được rõ ràng để tớ nói ra cho cậu biết.</span><br/>
+			luv(u, i)<br/>
+			<span class="comments"># Nhưng đến hôm nay thì tớ đã có thể nói với cậu rằng " Tớ thích cậu nhiều hơn cậu nghĩ ".</span><br/>
+			like(u, i, sometimes=<span class="keyword">True</span>)<br/>
+			<span class="comments"># Tớ chỉ muốn cậu vui, không còn phải buồn hay tổn thương nữa.</span><br/>
+			u.in_luv_with(i) <br/>
+			i.in_luv_with(u) <br/>
+			<span class="comments"># Cậu là người mà tớ thích và dành tình cảm nhiều nhất từ trước đến nay.</span><br/>
+			while <span class="keyword">True</span>:<br/>
+			<span class="placeholder"></span><span class="keyword">if</span> u.with(i):<br/>
+			<span class="placeholder"></span><span class="placeholder"></span>u = everything<br/>
+			<span class="placeholder"></span><span class="keyword">else</span>:<br/>
+			<span class="placeholder"></span><span class="placeholder"></span>everything = u<br/>
+			<span class="comments"># Tớ mong món quà nhỏ này của tớ chuẩn bị sẽ làm công chúa thấy vui và mong công chúa từ nay về sau không bị tổn thương nữa.</span><br/>
+			i.marry(u, in_the_future=<span class="keyword">True</span>)<br/>
+			i.live_happily_forever_with(u)<br/>
+			<span class="comments"># I love you forever.</span><br/>
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					Chipoo.chipi, đây là thời gian mà tớ và cậu quen nhau đến hiện tại 
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+					Love u forever and ever.<br/>
+					<div class="signature">- bao viet | Vietnam</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="copyright">
+		Món quà nhỏ của Bviet dành cho công chúa chipoo.chipi ngày Valentine
+	</div>
+</div>
+<script type="text/javascript">
+	var offsetX = $("#loveHeart").width() / 2;
+	var offsetY = $("#loveHeart").height() / 2 - 55;
+	var together = new Date();
+	
+	together.setFullYear(2020, 13, 6);
+	together.setHours(15);
+	together.setMinutes(0);
+	together.setSeconds(0);
+	together.setMilliseconds(0);
+
+	if (!document.createElement('canvas').getContext) {
+		var msg = document.createElement("div");
+		msg.id = "errorMsg";
+		msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+		document.body.appendChild(msg);
+		$("#code").css("display", "none")
+		$("#copyright").css("position", "absolute");
+		$("#copyright").css("bottom", "10px");
+		document.execCommand("stop");
+	} else {
+		setTimeout(function () {
+			startHeartAnimation();
+		}, 5000);
+
+		timeElapse(together);
+		setInterval(function () {
+			timeElapse(together);
+		}, 500);
+
+		adjustCodePosition();
+		$("#code").typewriter();
+	}
+</script>
+</body>
+</html>
